@@ -1,5 +1,5 @@
 const submit_button = document.querySelector(".button");
-submit_button.onclick = () => 
+submit_button.onclick = (e) => 
 {
     e.preventDefault();
     // all input data receive these variables
@@ -17,9 +17,8 @@ submit_button.onclick = () =>
     localStorage.setItem('Cpassword', cpass);
 
     // setting conditions
-    if(fname == "" && lname == "" && email == "" && pass == "" && cpass == "")
-     {
-        swal("Opps..!", "Input field must be filled", "error");
+    if(fname == "" || lname == "" || email == "" || pass == "" || cpass == "")     {
+        swal("Opps..!", "All input fields must be filled", "error");
      }
      else
      {
